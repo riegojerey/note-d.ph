@@ -4,10 +4,28 @@ const prevBtn = document.querySelector('.carousel-prev');
 const nextBtn = document.querySelector('.carousel-next');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const cards = document.querySelectorAll('.product-card');
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+const mobileLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
 
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
+
+function toggleMenu() {
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('open');
+  document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+}
+
+if (hamburger && mobileNav) {
+  hamburger.addEventListener('click', toggleMenu);
+  mobileLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (mobileNav.classList.contains('open')) toggleMenu();
+    });
+  });
+}
 
 if (track && prevBtn && nextBtn) {
   const scrollAmount = 280;
