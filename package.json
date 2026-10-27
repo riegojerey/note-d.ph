@@ -1,0 +1,13 @@
+{
+  "name": "note-d",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev . --d1 DB=local-noted-db --port 8788",
+    "db:migrate:local": "wrangler d1 migrations apply noted-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply noted-db --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^3.114.0"
+  }
+}

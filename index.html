@@ -3,835 +3,299 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Note.d — Parfums</title>
+  <title>Note.d — Oil-based perfumes inspired by the designer scents you love</title>
+  <meta name="description" content="Oil-based perfumes inspired by Dior Sauvage, Baccarat Rouge 540, Acqua di Gio, Delina and more. Hand-poured in the Philippines. 10mL for ₱119, 30mL for ₱275." />
+  <meta property="og:title" content="Note.d — your favorite designer scent, ₱119" />
+  <meta property="og:description" content="Oil-based perfumes inspired by the designer scents you love. 10mL for ₱119, 30mL for ₱275. Order on Messenger." />
+  <meta property="og:image" content="https://note-d.shop/brand/og.jpg" />
+  <meta name="theme-color" content="#2b0e1d" />
   <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="styles.css?v=3" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..800,100;1,9..144,400..800,100&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
 
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-logo">
-        <svg class="logo-mark" viewBox="0 0 46 36" fill="none">
-          <path d="M6 32 L6 4 L26 32 L26 4" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-          <circle cx="38" cy="28" r="3" stroke="currentColor" stroke-width="1" fill="none"/>
-        </svg>
-        <span>Note.d</span>
+  <p class="announce">10mL for <strong><span data-price="10mL">₱119</span></strong>, 30mL for <strong><span data-price="30mL">₱275</span></strong>. Pick-up in Makati and Ramon, Isabela.</p>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="logo" aria-label="Note.d home">
+        <img src="brand/mark-white.png" alt="" class="logo-mark" width="40" height="31" />
+        <img src="brand/wordmark-white.png" alt="Note.d" class="logo-word" width="96" height="18" />
       </a>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#collection">Scents</a></li>
-        <li><a href="#about">Our Story</a></li>
-        <li><a href="#contact">Order</a></li>
-      </ul>
-      <a href="#" class="nav-fb" aria-label="Facebook" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#shop">Shop</a>
+        <a href="#finder">Scent quiz</a>
+        <a href="#order">How to order</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="order-btn" id="cartOpen" aria-label="Open your order">
+        Your order <span class="count" id="cartCount">0</span>
       </button>
     </div>
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#home">Home</a>
-      <a href="#collection">Scents</a>
-      <a href="#about">Our Story</a>
-      <a href="#contact">Order</a>
-      <a href="#" target="_blank" rel="noopener">Order on Facebook</a>
-    </div>
-  </nav>
+  </header>
 
-  <section class="hero" id="home">
-    <div class="hero-sky">
-      <div class="cloud cloud-1"></div>
-      <div class="cloud cloud-2"></div>
-      <div class="cloud cloud-3"></div>
-      <div class="cloud cloud-4"></div>
-    </div>
-    <div class="hero-grass">
-      <div class="grass-blade"></div>
-      <div class="grass-blade"></div>
-      <div class="grass-blade"></div>
-      <div class="grass-blade"></div>
-      <div class="grass-blade"></div>
-      <div class="grass-blade"></div>
-      <div class="grass-blade"></div>
-      <div class="grass-blade"></div>
-      <div class="grass-blade"></div>
-    </div>
-    <div class="hero-flowers">
-      <div class="petal p1"></div>
-      <div class="petal p2"></div>
-      <div class="petal p3"></div>
-      <div class="petal p4"></div>
-      <div class="petal p5"></div>
-      <div class="petal p6"></div>
-      <div class="petal p7"></div>
-      <div class="petal p8"></div>
-    </div>
-    <div class="hero-sparkles">
-      <div class="sparkle s1">✦</div>
-      <div class="sparkle s2">✧</div>
-      <div class="sparkle s3">✦</div>
-      <div class="sparkle s4">✧</div>
-      <div class="sparkle s5">✦</div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-logo-wrap">
-        <svg viewBox="0 0 140 110" fill="none" class="hero-logo-svg">
-          <path d="M18 100 L18 10 L78 100 L78 10" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-          <circle cx="110" cy="90" r="8" stroke="currentColor" stroke-width="1.2" fill="none"/>
-        </svg>
-      </div>
-      <h1 class="hero-title">Note.d</h1>
-      <p class="hero-subtitle">~ a love story, bottled ~</p>
-      <p class="hero-tagline">Handcrafted in the Philippines. Oil-based designer-inspired fragrances — no water, just pure scent that lasts all day. Smelling unforgettable shouldn't cost a fortune.</p>
-      <a href="#collection" class="btn-primary">Discover the Scents</a>
-    </div>
-  </section>
+  <main id="top">
 
-  <section class="collection" id="collection">
-    <div class="section-header">
-      <div class="header-flower">
-        <svg viewBox="0 0 40 24" fill="none">
-          <circle cx="20" cy="12" r="3" fill="currentColor" opacity="0.4"/>
-          <circle cx="12" cy="8" r="2.5" fill="currentColor" opacity="0.3"/>
-          <circle cx="28" cy="8" r="2.5" fill="currentColor" opacity="0.3"/>
-          <circle cx="8" cy="14" r="2" fill="currentColor" opacity="0.25"/>
-          <circle cx="32" cy="14" r="2" fill="currentColor" opacity="0.25"/>
-          <line x1="20" y1="14" x2="20" y2="22" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
-          <path d="M17 20 Q20 17 23 20" stroke="currentColor" stroke-width="0.8" fill="none" opacity="0.3"/>
-        </svg>
-      </div>
-      <p class="section-label">Our Scents</p>
-      <h2 class="section-title">The Full Catalogue</h2>
-      <p class="section-desc">21 oil-based fragrances inspired by the world's most iconic scents. Blended by hand in the Philippines. No water, no alcohol — just pure long-lasting scent at a fraction of the cost.</p>
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="male">Male</button>
-        <button class="filter-btn" data-filter="female">Female</button>
-        <button class="filter-btn" data-filter="unisex">Unisex</button>
-      </div>
-    </div>
+    <section class="hero" id="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <h1>Your favorite designer scent, made into pure perfume oil.</h1>
+          <p class="hero-lead">Oil-based blends inspired by the perfumes everyone asks about. No alcohol and no water, so it stays on your skin. <strong>10mL for <span data-price="10mL">₱119</span>, 30mL for <span data-price="30mL">₱275</span>.</strong></p>
 
-    <div class="carousel-wrapper">
-      <button class="carousel-arrow carousel-prev" aria-label="Scroll left">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <div class="carousel-track" id="carouselTrack">
-        <!-- 01 -->
-        <div class="product-card" data-gender="male">
-          <div class="product-image">
-            <div class="card-bg card-bg-ocean">
-              <div class="card-wave"></div><div class="card-wave"></div><div class="card-wave"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag male">Male</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 1</span>
-            <h3 class="product-name">Acqua Profonda</h3>
-            <p class="product-notes">Marine &middot; bergamot &middot; cypress</p>
-            <p class="product-desc">The boardroom is yours. Crisp marine air, sharp bergamot, grounded cypress — bottled confidence for the man who never second-guesses.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; Beach &middot; Office</p>
-            <p class="product-inspired">Inspired by Acqua di Gio Profondo</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
+          <p class="try-label">Tap a perfume you love:</p>
+          <div class="try" id="tryList" role="group" aria-label="Preview a scent"></div>
+
+          <form class="hero-search" id="heroSearch" role="search">
+            <label class="visually-hidden" for="heroInput">Search by designer perfume or note</label>
+            <input id="heroInput" type="search" placeholder="Or search: Sauvage, vanilla, rose…" autocomplete="off" />
+            <button type="submit" class="btn btn-gold">Search</button>
+          </form>
         </div>
 
-        <!-- 02 -->
-        <div class="product-card" data-gender="male">
-          <div class="product-image">
-            <div class="card-bg card-bg-fire">
-              <div class="card-flame"></div><div class="card-flame"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag male">Male</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 2</span>
-            <h3 class="product-name">Fiamma</h3>
-            <p class="product-notes">Red apple &middot; tonka &middot; sage</p>
-            <p class="product-desc">A spark that ignites the room. Red apple and tonka bean wrapped in aromatic sage — for nights that start bold and end unforgettable.</p>
-            <p class="product-best"><span>Best for</span> Night &middot; Date Night &middot; Party</p>
-            <p class="product-inspired">Inspired by Eros Flame</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 03 -->
-        <div class="product-card" data-gender="unisex">
-          <div class="product-image">
-            <div class="card-bg card-bg-gentle">
-              <div class="card-ripple"></div><div class="card-ripple"></div><div class="card-ripple"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag unisex">Unisex</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 3</span>
-            <h3 class="product-name">Fluidité Douce</h3>
-            <p class="product-notes">Juniper &middot; musk &middot; vanilla</p>
-            <p class="product-desc">Effortless elegance. Juniper's freshness glides into soft musk and warm vanilla — subtle, but impossible to ignore.</p>
-            <p class="product-best"><span>Best for</span> Day &amp; Night &middot; Office &middot; Casual</p>
-            <p class="product-inspired">Inspired by Gentle Fluidity</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 04 -->
-        <div class="product-card" data-gender="unisex">
-          <div class="product-image">
-            <div class="card-bg card-bg-baccarat">
-              <div class="card-crystal"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag unisex">Unisex</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 4</span>
-            <h3 class="product-name">Rouge Cristal</h3>
-            <p class="product-notes">Saffron &middot; cedar &middot; ambergris</p>
-            <p class="product-desc">Opulence without apology. Saffron threads, smoked cedar, and ambergris — the scent that lingers in a room long after you've left.</p>
-            <p class="product-best"><span>Best for</span> Night &middot; Formal &middot; Evening</p>
-            <p class="product-inspired">Inspired by Baccarat Rouge 540</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 05 -->
-        <div class="product-card" data-gender="unisex">
-          <div class="product-image">
-            <div class="card-bg card-bg-city">
-              <div class="card-skyline"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag unisex">Unisex</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 5</span>
-            <h3 class="product-name">212°</h3>
-            <p class="product-notes">Citrus &middot; florals &middot; sandalwood</p>
-            <p class="product-desc">City lights, open roads, endless possibility. Zesty citrus and soft sandalwood — for the dreamer who never stops moving.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; City &middot; Everyday</p>
-            <p class="product-inspired">Inspired by Carolina Herrera 212</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 06 -->
-        <div class="product-card" data-gender="female">
-          <div class="product-image">
-            <div class="card-bg card-bg-coral">
-              <div class="card-coral"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag female">Female</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 6</span>
-            <h3 class="product-name">Corail Solaire</h3>
-            <p class="product-notes">Hibiscus &middot; pomegranate &middot; cedar</p>
-            <p class="product-desc">Sun-warmed skin and salt-kissed hair. Hibiscus and pomegranate burst against creamy cedar — summer, bottled.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; Beach &middot; Summer</p>
-            <p class="product-inspired">Inspired by Bulgari Omnia Coral</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 07 -->
-        <div class="product-card" data-gender="female">
-          <div class="product-image">
-            <div class="card-bg card-bg-crystal">
-              <div class="card-ice"></div><div class="card-ice"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag female">Female</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 7</span>
-            <h3 class="product-name">Cristalline</h3>
-            <p class="product-notes">Lotus &middot; bamboo &middot; white tea</p>
-            <p class="product-desc">Still waters, clear thoughts. Lotus flower floats above bamboo and white tea — pure, luminous, serene.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; Office &middot; Brunch</p>
-            <p class="product-inspired">Inspired by Bulgari Omnia Crystalline</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 08 -->
-        <div class="product-card" data-gender="male">
-          <div class="product-image">
-            <div class="card-bg card-bg-sauvage">
-              <div class="card-desert"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag male">Male</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 8</span>
-            <h3 class="product-name">Sauvage Homme</h3>
-            <p class="product-notes">Bergamot &middot; pepper &middot; ambroxan</p>
-            <p class="product-desc">Raw magnetism. Pepper-spiced bergamot crashes into deep ambroxan — untamed, unmistakable, irresistible.</p>
-            <p class="product-best"><span>Best for</span> Day &amp; Night &middot; Versatile &middot; All Occasions</p>
-            <p class="product-inspired">Inspired by Dior Sauvage</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 09 -->
-        <div class="product-card" data-gender="unisex">
-          <div class="product-image">
-            <div class="card-bg card-bg-lightblue">
-              <div class="card-seagull"></div><div class="card-seagull"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag unisex">Unisex</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 9</span>
-            <h3 class="product-name">Azzurro Mare</h3>
-            <p class="product-notes">Lemon &middot; cedar &middot; musk</p>
-            <p class="product-desc">Sicilian lemons, warm skin, the sea breeze through an open window. Crisp cedar and clean musk — freedom bottled.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; Beach &middot; Casual</p>
-            <p class="product-inspired">Inspired by Dolce &amp; Gabbana Light Blue</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 10 -->
-        <div class="product-card" data-gender="female">
-          <div class="product-image">
-            <div class="card-bg card-bg-eclat">
-              <div class="card-sparkle-eclat">✦</div><div class="card-sparkle-eclat">✧</div><div class="card-sparkle-eclat">✦</div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag female">Female</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 10</span>
-            <h3 class="product-name">Éclat Florale</h3>
-            <p class="product-notes">Lilac &middot; peach &middot; white musk</p>
-            <p class="product-desc">A garden at first light. Lilac and peach kissed by white musk — delicate, romantic, timeless.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; Garden Party &middot; Date</p>
-            <p class="product-inspired">Inspired by Lanvin Éclat d'Arpège</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 11 -->
-        <div class="product-card" data-gender="female">
-          <div class="product-image">
-            <div class="card-bg card-bg-merveilles">
-              <div class="card-wave-m"></div><div class="card-wave-m"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag female">Female</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 11</span>
-            <h3 class="product-name">Merveille Bleue</h3>
-            <p class="product-notes">Salt &middot; minerals &middot; driftwood</p>
-            <p class="product-desc">The ocean at twilight. Salted minerals and weathered driftwood — mysterious, deep, endlessly captivating.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; Beach &middot; Coastal Walks</p>
-            <p class="product-inspired">Inspired by Hermès Eau des Merveilles Bleue</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 12 -->
-        <div class="product-card" data-gender="unisex">
-          <div class="product-image">
-            <div class="card-bg card-bg-one">
-              <div class="card-amberglow"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag unisex">Unisex</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 12</span>
-            <h3 class="product-name">L'Unico</h3>
-            <p class="product-notes">Peach &middot; vanilla &middot; amber</p>
-            <p class="product-desc">The one they will remember. Juicy peach melts into creamy vanilla and golden amber — warm, magnetic, intimate.</p>
-            <p class="product-best"><span>Best for</span> Night &middot; Date &middot; Intimate</p>
-            <p class="product-inspired">Inspired by Dolce &amp; Gabbana The One</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 13 -->
-        <div class="product-card" data-gender="male">
-          <div class="product-image">
-            <div class="card-bg card-bg-ocean">
-              <div class="card-wave"></div><div class="card-wave"></div><div class="card-wave"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag male">Male</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 13</span>
-            <h3 class="product-name">Acqua Classica</h3>
-            <p class="product-notes">Seawater &middot; jasmine &middot; rosemary</p>
-            <p class="product-desc">Dive in. Cool seawater, blooming jasmine, and fresh rosemary — the timeless icon, still unmatched.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; Beach &middot; Office</p>
-            <p class="product-inspired">Inspired by Acqua di Gio</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 14 -->
-        <div class="product-card" data-gender="male">
-          <div class="product-image">
-            <div class="card-bg card-bg-lacoste">
-              <div class="card-tennis"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag male">Male</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 14</span>
-            <h3 class="product-name">Blanc Frais</h3>
-            <p class="product-notes">Grapefruit &middot; cardamom &middot; cedar</p>
-            <p class="product-desc">Clean lines. Fresh grapefruit and spiced cardamom settle into smooth cedar — crisp, sporty, unmistakably fresh.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; Sport &middot; Office</p>
-            <p class="product-inspired">Inspired by Lacoste White</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 15 -->
-        <div class="product-card" data-gender="female">
-          <div class="product-image">
-            <div class="card-bg card-bg-nectarine">
-              <div class="card-fruit"></div><div class="card-fruit"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag female">Female</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 15</span>
-            <h3 class="product-name">Nectarine Bloom</h3>
-            <p class="product-notes">Nectarine &middot; peony &middot; honey</p>
-            <p class="product-desc">A nectarine split open under summer sun. Peony petals and a drizzle of honey — bright, joyful, irresistible.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; Garden &middot; Brunch</p>
-            <p class="product-inspired">Inspired by Jo Malone Nectarine</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 16 -->
-        <div class="product-card" data-gender="female">
-          <div class="product-image">
-            <div class="card-bg card-bg-rose">
-              <div class="card-petals">
-                <span class="c-petal"></span><span class="c-petal"></span><span class="c-petal"></span>
-                <span class="c-petal"></span><span class="c-petal"></span>
-              </div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag female">Female</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 16</span>
-            <h3 class="product-name">Delina Rose</h3>
-            <p class="product-notes">Lychee &middot; rhubarb &middot; Turkish rose</p>
-            <p class="product-desc">A bouquet that commands the room. Juicy lychee and tangy rhubarb embrace Turkish rose — feminine, fierce, unforgettable.</p>
-            <p class="product-best"><span>Best for</span> Day &amp; Night &middot; Date &middot; Formal</p>
-            <p class="product-inspired">Inspired by Parfums de Marly Delina</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 17 -->
-        <div class="product-card" data-gender="unisex">
-          <div class="product-image">
-            <div class="card-bg card-bg-imag">
-              <div class="card-fog"></div><div class="card-fog"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag unisex">Unisex</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 17</span>
-            <h3 class="product-name">Rêverie</h3>
-            <p class="product-notes">Black tea &middot; ginger &middot; cinnamon</p>
-            <p class="product-desc">Lost in thought, wrapped in warmth. Black tea steams with ginger and cinnamon — quiet luxury for the wandering mind.</p>
-            <p class="product-best"><span>Best for</span> Cold Days &middot; Café &middot; Cozy Evenings</p>
-            <p class="product-inspired">Inspired by LV Imagination</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 18 -->
-        <div class="product-card" data-gender="male">
-          <div class="product-image">
-            <div class="card-bg card-bg-ysl">
-              <div class="card-neon"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag male">Male</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 18</span>
-            <h3 class="product-name">Noir Intense</h3>
-            <p class="product-notes">Ginger &middot; lavender &middot; vetiver</p>
-            <p class="product-desc">After midnight. Sharp ginger cuts through lavender fields, grounded by dark vetiver — bold, brooding, electric.</p>
-            <p class="product-best"><span>Best for</span> Night &middot; Party &middot; Date</p>
-            <p class="product-inspired">Inspired by YSL Y Intense</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 19 -->
-        <div class="product-card" data-gender="unisex">
-          <div class="product-image">
-            <div class="card-bg card-bg-symph">
-              <div class="card-note-s"></div><div class="card-note-s"></div><div class="card-note-s"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag unisex">Unisex</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 19</span>
-            <h3 class="product-name">Symphonie Dorée</h3>
-            <p class="product-notes">Grapefruit &middot; ginger &middot; bergamot</p>
-            <p class="product-desc">A golden hour that never ends. Grapefruit and ginger lifted by bright bergamot — radiant, uplifting, pure joy.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; Office &middot; Casual</p>
-            <p class="product-inspired">Inspired by LV Symphony</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 20 -->
-        <div class="product-card" data-gender="female">
-          <div class="product-image">
-            <div class="card-bg card-bg-valaya">
-              <div class="card-veil"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag female">Female</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 20</span>
-            <h3 class="product-name">Voile Blanc</h3>
-            <p class="product-notes">Bergamot &middot; orange blossom &middot; musk</p>
-            <p class="product-desc">A silk veil brushing bare skin. Bergamot awakens orange blossom, settling into clean musk — airy, graceful, ethereal.</p>
-            <p class="product-best"><span>Best for</span> Day &middot; Office &middot; Date</p>
-            <p class="product-inspired">Inspired by Parfums de Marly Valaya</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 21 -->
-        <div class="product-card" data-gender="female">
-          <div class="product-image">
-            <div class="card-bg card-bg-paradoxe">
-              <div class="card-mirror"></div>
-            </div>
-            <div class="bottle-svg">
-              <svg viewBox="0 0 50 120" fill="none"><ellipse cx="25" cy="16" rx="10" ry="3" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><path d="M15 16 L15 21 Q15 23 25 23 Q35 23 35 21 L35 16" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.35"/><rect x="13" y="22" width="24" height="70" rx="6" stroke="currentColor" stroke-width="1" opacity="0.45"/><rect x="16" y="25" width="18" height="64" rx="4" stroke="currentColor" stroke-width="0.5" opacity="0.25"/><text x="25" y="110" text-anchor="middle" font-size="6" font-family="Nunito" fill="currentColor" opacity="0.3" letter-spacing="3">Note.d</text></svg>
-            </div>
-            <span class="product-tag female">Female</span>
-          </div>
-          <div class="product-info">
-            <span class="product-number">no. 21</span>
-            <h3 class="product-name">Paradosso</h3>
-            <p class="product-notes">Pear &middot; jasmine &middot; vanilla bourbon</p>
-            <p class="product-desc">The beautiful contradiction. Sweet pear and sambac jasmine dissolve into vanilla bourbon — soft, yet unshakable.</p>
-            <p class="product-best"><span>Best for</span> Night &middot; Date &middot; Formal</p>
-            <p class="product-inspired">Inspired by Prada Paradoxe</p>
-            <div class="product-footer">
-              <span class="product-price">₱99<span class="price-ml"> /10mL</span> &middot; ₱249<span class="price-ml"> /30mL</span></span>
-              <button class="btn-order">Order on Facebook</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-arrow carousel-next" aria-label="Scroll right">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-    </div>
-    <div class="carousel-dots" id="carouselDots"></div>
-
-  <section class="about" id="about">
-    <div class="about-bg">
-      <div class="bg-plant bg-plant-left">
-        <svg viewBox="0 0 80 200" fill="none">
-          <path d="M40 200 Q35 150 25 120 Q15 90 10 60" stroke="currentColor" stroke-width="1" opacity="0.15" fill="none"/>
-          <path d="M10 60 Q5 50 8 40" stroke="currentColor" stroke-width="1" opacity="0.12" fill="none"/>
-          <path d="M10 60 Q18 50 20 38" stroke="currentColor" stroke-width="1" opacity="0.12" fill="none"/>
-          <ellipse cx="7" cy="36" rx="6" ry="4" fill="currentColor" opacity="0.1"/>
-          <ellipse cx="21" cy="34" rx="5" ry="3" fill="currentColor" opacity="0.1"/>
-        </svg>
-      </div>
-      <div class="bg-plant bg-plant-right">
-        <svg viewBox="0 0 80 200" fill="none">
-          <path d="M40 200 Q45 140 55 110 Q65 80 70 50" stroke="currentColor" stroke-width="1" opacity="0.15" fill="none"/>
-          <path d="M70 50 Q75 40 72 30" stroke="currentColor" stroke-width="1" opacity="0.12" fill="none"/>
-          <path d="M70 50 Q62 40 60 28" stroke="currentColor" stroke-width="1" opacity="0.12" fill="none"/>
-          <ellipse cx="73" cy="26" rx="6" ry="4" fill="currentColor" opacity="0.1"/>
-          <ellipse cx="59" cy="24" rx="5" ry="3" fill="currentColor" opacity="0.1"/>
-        </svg>
-      </div>
-    </div>
-    <div class="about-content">
-      <div class="about-text">
-        <p class="section-label">Our Story</p>
-        <h2 class="section-title">Two Accountants, One Love</h2>
-        <p class="about-body">
-          Note.d began with two accountants who shared everything — a desk, a dream,
-          and a love for the way a good perfume could transform an ordinary moment into
-          something unforgettable. But walking past the designer counters, they realized
-          the scents they adored came with numbers that didn't
-          add up. So they did what any good accountant would: they found another way.
-        </p>
-        <p class="about-body">
-          Armed with research, raw oils, and the kind of patience only balance sheets
-          can teach, they began mixing their first bottles on their kitchen counter.
-          Trial after trial, night after night, they chased something that smelled like
-          the luxury they couldn't afford — and found something even better. Something
-          their own. Every Note.d fragrance is the result of two people who refused to
-          let a price tag stand between them and the scents they loved. Bottled by hand,
-          priced with heart, sent out hoping it finds someone just like them.
-        </p>
-        <div class="about-stats">
-          <div class="stat">
-            <span class="stat-number">2</span>
-            <span class="stat-label">Hearts Behind It</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">21</span>
-            <span class="stat-label">Love Letters</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">₱99</span>
-            <span class="stat-label">Starting Price</span>
-          </div>
-        </div>
-      </div>
-      <div class="about-visual">
-        <div class="cottage-illustration">
-          <svg viewBox="0 0 240 280" fill="none">
-            <circle cx="200" cy="40" r="30" fill="currentColor" opacity="0.06"/>
-            <circle cx="200" cy="40" r="20" fill="currentColor" opacity="0.08"/>
-            <rect x="40" y="160" width="160" height="100" fill="currentColor" opacity="0.06" rx="2"/>
-            <polygon points="40,160 120,80 200,160" fill="currentColor" opacity="0.08"/>
-            <polygon points="40,160 120,80 200,160" stroke="currentColor" stroke-width="0.8" opacity="0.2"/>
-            <rect x="100" y="190" width="40" height="70" fill="currentColor" opacity="0.05" rx="1"/>
-            <rect x="60" y="200" width="30" height="30" fill="currentColor" opacity="0.04" rx="1"/>
-            <rect x="150" y="200" width="30" height="30" fill="currentColor" opacity="0.04" rx="1"/>
-            <path d="M120 80 L120 50" stroke="currentColor" stroke-width="0.6" opacity="0.15"/>
-            <circle cx="120" cy="48" r="4" fill="currentColor" opacity="0.08"/>
+        <div class="stage" aria-live="polite">
+          <div class="glow" aria-hidden="true"></div>
+          <svg class="flacon" viewBox="0 0 220 340" aria-hidden="true">
+            <defs>
+              <clipPath id="bodyClip"><path d="M40 118 Q40 96 66 92 L154 92 Q180 96 180 118 L180 300 Q180 326 154 326 L66 326 Q40 326 40 300 Z"/></clipPath>
+              <linearGradient id="capGold" x1="0" x2="1">
+                <stop offset="0" stop-color="#8a5a12"/><stop offset=".35" stop-color="#f6d27a"/><stop offset=".6" stop-color="#e9b24c"/><stop offset="1" stop-color="#7a4c0c"/>
+              </linearGradient>
+            </defs>
+            <rect x="74" y="8" width="72" height="62" rx="8" fill="url(#capGold)"/>
+            <g stroke="rgba(0,0,0,.18)" stroke-width="2"><line x1="86" y1="14" x2="86" y2="64"/><line x1="98" y1="14" x2="98" y2="64"/><line x1="110" y1="14" x2="110" y2="64"/><line x1="122" y1="14" x2="122" y2="64"/><line x1="134" y1="14" x2="134" y2="64"/></g>
+            <rect x="88" y="70" width="44" height="24" fill="rgba(255,255,255,.55)"/>
+            <path d="M40 118 Q40 96 66 92 L154 92 Q180 96 180 118 L180 300 Q180 326 154 326 L66 326 Q40 326 40 300 Z" fill="rgba(255,255,255,.12)"/>
+            <g clip-path="url(#bodyClip)">
+              <g class="liquid" id="liquid">
+                <path class="oil" d="M30 0 Q72 -10 110 0 T190 0 L190 250 L30 250 Z"/>
+                <path d="M30 0 Q72 -10 110 0 T190 0 L190 16 Q110 6 30 16 Z" fill="rgba(255,255,255,.25)"/>
+              </g>
+            </g>
+            <path d="M40 118 Q40 96 66 92 L154 92 Q180 96 180 118 L180 300 Q180 326 154 326 L66 326 Q40 326 40 300 Z" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="3"/>
+            <rect x="52" y="112" width="10" height="190" rx="5" fill="rgba(255,255,255,.35)"/>
+            <rect x="160" y="130" width="5" height="120" rx="2.5" fill="rgba(255,255,255,.25)"/>
+            <rect x="66" y="196" width="88" height="70" rx="4" fill="#fffaf6"/>
+            <image href="brand/mark.png" x="96" y="204" width="28" height="22"/>
+            <text id="flaconName" x="110" y="246" text-anchor="middle" font-family="Fraunces, serif" font-size="12" font-weight="600" fill="#2b0e1d"></text>
+            <text id="flaconNo" x="110" y="259" text-anchor="middle" font-family="Jost, sans-serif" font-size="8" fill="#7a5a66"></text>
           </svg>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="quote-section">
-    <div class="quote-bg-left"></div>
-    <div class="quote-bg-right"></div>
-    <div class="quote-content">
-      <p class="quote-mark">&ldquo;</p>
-      <blockquote>
-        The fragrance always stays in the hand of the one who gives the rose.
-      </blockquote>
-      <cite>&mdash; from a garden in Tagaytay</cite>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="contact-content">
-      <div class="contact-text">
-        <p class="section-label">Order</p>
-        <h2 class="section-title">How to Get Your Note.d</h2>
-        <p class="contact-desc">
-          Browse the catalogue above, pick your scent, then message us on Facebook
-          to place your order. We deliver nationwide — buyer shoulders the shipping fee.
-          We'll take it from there.
-        </p>
-        <div class="contact-branches">
-          <div class="branch">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            <div>
-              <strong>Ramon, Isabela</strong>
-              <span>Main Workshop</span>
-            </div>
-          </div>
-          <div class="branch">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            <div>
-              <strong>San Antonio, Makati</strong>
-              <span>Pick-up Hub</span>
+          <div class="stage-card">
+            <p class="stage-inspired">Inspired by <strong id="stageInspired"></strong></p>
+            <h2 id="stageName"></h2>
+            <p class="stage-notes" id="stageNotes"></p>
+            <div class="stage-buy">
+              <button class="btn btn-rose" data-stage-add="10mL">Add 10mL, <span data-price="10mL">₱119</span></button>
+              <button class="btn btn-ghost-light" data-stage-add="30mL">Add 30mL, <span data-price="30mL">₱275</span></button>
             </div>
           </div>
         </div>
-        <div class="contact-details">
-          <a href="#" class="fb-big-link" target="_blank" rel="noopener">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-            <span>Order via Facebook Messenger</span>
-          </a>
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <div class="wrap">
+        <h2>Scents</h2>
+        <p class="sub">Pick a size, tap Add, and send your whole order in one Messenger message.</p>
+
+        <div class="shop-controls">
+          <label class="search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <span class="visually-hidden">Search scents</span>
+            <input type="search" id="search" placeholder="Search by name, designer scent or note" autocomplete="off" />
+          </label>
+          <div class="chips" role="group" aria-label="Filter">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="male">For him</button>
+            <button class="chip" data-filter="female">For her</button>
+            <button class="chip" data-filter="unisex">Unisex</button>
+            <button class="chip" data-filter="day">Daytime</button>
+            <button class="chip" data-filter="night">Night out</button>
+          </div>
+        </div>
+
+        <p class="result-count" id="resultCount" aria-live="polite"></p>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" hidden>
+          <p>None of our scents match that yet.</p>
+          <a href="#" class="btn btn-rose js-messenger">Ask us on Messenger</a>
+          <p class="fine">Tell us the perfume you love. We may have something close, or it could be our next blend.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="finder" id="finder">
+      <div class="wrap finder-inner">
+        <div>
+          <h2>Find your match in three questions</h2>
+          <p class="sub">Go with your first instinct.</p>
+        </div>
+
+        <div class="quiz" id="quiz">
+          <div class="quiz-step" data-step="0">
+            <p class="quiz-n">Question 1 of 3</p>
+            <p class="quiz-q">Who is it for?</p>
+            <div class="quiz-opts">
+              <button data-key="gender" data-val="male">Him</button>
+              <button data-key="gender" data-val="female">Her</button>
+              <button data-key="gender" data-val="any">Anyone</button>
+            </div>
+          </div>
+          <div class="quiz-step" data-step="1" hidden>
+            <p class="quiz-n">Question 2 of 3</p>
+            <p class="quiz-q">When will you wear it most?</p>
+            <div class="quiz-opts">
+              <button data-key="time" data-val="day">Every day: school, work, errands</button>
+              <button data-key="time" data-val="night">Dates and nights out</button>
+              <button data-key="time" data-val="any">Both</button>
+            </div>
+          </div>
+          <div class="quiz-step" data-step="2" hidden>
+            <p class="quiz-n">Question 3 of 3</p>
+            <p class="quiz-q">Which sounds most like you?</p>
+            <div class="quiz-opts">
+              <button data-key="vibe" data-val="fresh">Fresh and clean</button>
+              <button data-key="vibe" data-val="sweet">Sweet and cozy</button>
+              <button data-key="vibe" data-val="floral">Floral and fruity</button>
+              <button data-key="vibe" data-val="bold">Bold and spicy</button>
+            </div>
+          </div>
+          <div class="quiz-result" id="quizResult" hidden>
+            <p class="quiz-q">Your top 3 matches</p>
+            <div class="result-list" id="resultList"></div>
+            <button class="text-link" id="quizRestart">Start over</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="wrap">
+        <h2>Why perfume oil</h2>
+        <div class="why-grid">
+          <div>
+            <h3>It lasts longer</h3>
+            <p>Most perfumes are mostly alcohol and water, which evaporate quickly. Ours is pure oil, so the scent stays on your skin through the day.</p>
+          </div>
+          <div>
+            <h3>It costs a fraction</h3>
+            <p>A designer bottle can cost ₱5,000 or more. Our 30mL is <span data-price="30mL">₱275</span>, inspired by the same scent you already love.</p>
+          </div>
+          <div>
+            <h3>You can try it small</h3>
+            <p>Start with a 10mL for <span data-price="10mL">₱119</span>. When you find your signature, the 30mL gives you three times as much.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="order" id="order">
+      <div class="wrap">
+        <h2>How to order</h2>
+        <ol class="steps">
+          <li>
+            <h3>Add your scents</h3>
+            <p>Choose 10mL or 30mL on any scent and tap Add.</p>
+          </li>
+          <li>
+            <h3>Send your order on Messenger</h3>
+            <p>Open Your order and tap Send. We copy the order for you, so you only need to paste it in the chat.</p>
+          </li>
+          <li>
+            <h3>Pay and receive</h3>
+            <p>We confirm your order and payment in the chat, then arrange delivery or pick-up.</p>
+          </li>
+        </ol>
+        <div class="pickup">
+          <h3>Pick-up points</h3>
+          <p>San Antonio, Makati</p>
+          <p>Ramon, Isabela (our workshop)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap faq-inner">
+        <h2>Questions</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Are these the original designer perfumes?</summary>
+            <p>No. Note.d perfumes are our own oil-based blends inspired by famous designer scents, made to capture the same character at a fraction of the price. We're not affiliated with any of the brands we mention.</p>
+          </details>
+          <details>
+            <summary>How do I apply perfume oil?</summary>
+            <p>Dab or roll it onto your pulse points: wrists, neck and behind the ears. A little goes a long way. Let it settle instead of rubbing your wrists together.</p>
+          </details>
+          <details>
+            <summary>Which size should I get?</summary>
+            <p>If you're trying a scent for the first time, get the 10mL for <span data-price="10mL">₱119</span>. If you already love it, the 30mL for <span data-price="30mL">₱275</span> is better value.</p>
+          </details>
+          <details>
+            <summary>How much is delivery?</summary>
+            <p>The buyer pays the delivery fee. Send us your location on Messenger and we'll tell you the exact amount. You can also pick up in San Antonio, Makati or Ramon, Isabela.</p>
+          </details>
+          <details>
+            <summary>How do I pay?</summary>
+            <p>We confirm payment options with you on Messenger when you send your order.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="ask">
+      <div class="wrap ask-inner">
+        <img src="brand/mark.png" alt="" class="ask-mark" aria-hidden="true" />
+        <div>
+          <h2>Can't find the perfume you love?</h2>
+          <p>Tell us what it is. We may already have something close.</p>
+        </div>
+        <a href="#" class="btn btn-wine js-messenger">Ask us on Messenger</a>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <svg viewBox="0 0 46 36" fill="none" class="footer-logo-svg">
-          <path d="M6 32 L6 4 L26 32 L26 4" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
-          <circle cx="38" cy="28" r="3" stroke="currentColor" stroke-width="1" fill="none"/>
-        </svg>
-        <div>
-          <h3>Note.d</h3>
-          <p>~ handcrafted in the Philippines ~</p>
-        </div>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
-          <h4>Scents</h4>
-          <ul>
-            <li><a href="#collection">All Fragrances</a></li>
-            <li><a href="#">Discovery Set</a></li>
-            <li><a href="#">Gift Wrapping</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>The Workshop</h4>
-          <ul>
-            <li><a href="#about">Our Story</a></li>
-            <li><a href="#">How It's Made</a></li>
-            <li><a href="#">Stockists</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Kind Words</h4>
-          <ul>
-            <li><a href="#contact">Write to Us</a></li>
-            <li><a href="#">Stockists</a></li>
-            <li><a href="#">Press</a></li>
-          </ul>
-        </div>
-      </div>
+    <div class="wrap footer-inner">
+      <a href="#top" class="footer-logo" aria-label="Note.d home">
+        <img src="brand/logo-white.png" alt="Note.d" width="96" height="92" />
+      </a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#shop">Shop</a>
+        <a href="#finder">Scent quiz</a>
+        <a href="#order">How to order</a>
+        <a href="#faq">FAQ</a>
+        <a href="#" class="js-facebook">Facebook</a>
+      </nav>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Note.d &mdash; proudly made by hand in the Philippines</p>
-    </div>
+    <p class="wrap legal">&copy; 2026 Note.d. Hand-poured in the Philippines. Designer names are trademarks of their owners and are used only to describe scent. Note.d is not affiliated with these brands.</p>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <div class="mobile-bar" id="mobileBar">
+    <button class="btn btn-rose btn-block" id="mobileBarBtn">View your order <span id="mobileBarTotal"></span></button>
+  </div>
+
+  <div class="drawer-backdrop" id="backdrop" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Your order" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Your order</h2>
+      <button class="icon-btn" id="cartClose" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot">
+      <div class="total-row"><span>Subtotal</span><strong id="cartTotal">₱0</strong></div>
+      <p class="fine">Delivery fee is quoted on Messenger.</p>
+      <button class="btn btn-rose btn-block" id="sendOrder">Send order on Messenger</button>
+      <p class="fine center">We copy your order so you can paste it in the chat.</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js?v=9"></script>
 </body>
 </html>

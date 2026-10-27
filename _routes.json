@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "include": ["/api/*", "/functions/*", "/migrations/*", "/scripts/*", "/node_modules/*", "/wrangler.toml", "/package.json", "/package-lock.json", "/_routes.json"],
+  "exclude": []
+}

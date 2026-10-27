@@ -1,19 +1,19 @@
 <div align="center">
   <img src="logo.png" width="120" alt="Note.d logo" />
   <h1>Note.d</h1>
-  <p><em>~ a love story, bottled ~</em></p>
+  <p><em>Designer-inspired perfume oils from ₱119</em></p>
 </div>
 
 ---
 
-Handcrafted in the Philippines. Designer-inspired fragrances made with heart — because
+Oil-based, designer-inspired perfumes hand-poured in the Philippines — because
 smelling unforgettable shouldn't cost a fortune.
 
 ### What's inside
 
 - **21 fragrances** inspired by iconic designer scents
 - **10 mL** and **30 mL** hand-poured bottles
-- Buy directly via Facebook — no middlemen, no markups
+- Build an order on the site, send it via Messenger
 
 ### The collection
 
@@ -45,21 +45,42 @@ smelling unforgettable shouldn't cost a fortune.
 
 | Size   | Price   |
 | ------ | ------  |
-| 10 mL  | &#8369;99  |
-| 30 mL  | &#8369;249 |
+| 10 mL  | &#8369;119  |
+| 30 mL  | &#8369;275 |
 
 ### Structure
 
 ```
 .
-├── index.html          # Main site
-├── styles.css          # All styles
-├── script.js           # Carousel, filters, copy-to-clipboard
-├── labels/             # Printable perfume label PNGs (21)
-├── gen_labels.py       # Script to regenerate labels
-├── logo.png / logo.svg # Brand logo
-└── favicon.png         # Browser tab icon
+├── index.html, styles.css, script.js   # Shop page
+├── brand/                               # Logo files (from updated_logo.jpg)
+├── admin/                               # Admin page at /admin (login required)
+├── functions/                           # Cloudflare Pages Functions: the /api the admin uses
+├── migrations/                          # D1 database tables + starting data
+├── scripts/create-user.mjs              # Create or reset an admin login
+├── labels/, gen_labels.py               # Printable perfume labels
+└── wrangler.toml, package.json          # Cloudflare tooling
 ```
+
+### Admin (note-d.shop/admin)
+
+Track sales, inventory, expenses and profit, and set the prices the shop shows.
+
+**One-time setup** (needs your Cloudflare login):
+
+1. `npm install`
+2. `npx wrangler login`
+3. `npx wrangler d1 create noted-db` → copy the `database_id` it prints into `wrangler.toml`
+4. `npm run db:migrate:remote` (creates the tables and loads the 21 scents)
+5. Cloudflare dashboard → Workers & Pages → your site → Settings → Bindings → Add → D1 database: variable name `DB`, database `noted-db`. Then redeploy.
+6. `node scripts/create-user.mjs <your-username> --remote` and type a password (10+ characters). Run it again for a partner's account, or to reset a forgotten password.
+
+**Try it locally:** `npm run db:migrate:local`, `node scripts/create-user.mjs test --local`, then `npm run dev` and open http://localhost:8788/admin.
+
+**Notes**
+- Prices set in Admin → Settings show on the shop within about a minute. The prices written in the page are only a fallback.
+- “Show sold out on the shop” starts off. Enter real stock counts in Inventory first.
+- Per-bottle cost covers oil, bottle and packaging. Log only other costs (ads, delivery you pay) as expenses, so nothing is counted twice.
 
 ### Order
 
