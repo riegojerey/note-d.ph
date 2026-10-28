@@ -11,7 +11,7 @@ smelling unforgettable shouldn't cost a fortune.
 
 ### What's inside
 
-- **21 fragrances** inspired by iconic designer scents
+- **22 fragrances** inspired by iconic designer scents
 - **10 mL** and **30 mL** hand-poured bottles
 - Build an order on the site, send it via Messenger
 
@@ -40,6 +40,7 @@ smelling unforgettable shouldn't cost a fortune.
 | 19 | Symphonie Dorée     | LV Symphony                     | Grapefruit &middot; Ginger &middot; Bergamot |
 | 20 | Voile Blanc         | Parfums de Marly Valaya         | Bergamot &middot; Orange Blossom &middot; Musk |
 | 21 | Paradosso           | Prada Paradoxe                  | Pear &middot; Jasmine &middot; Vanilla Bourbon |
+| 22 | Bleu Noble          | Bleu de Chanel                  | Grapefruit &middot; Incense &middot; Cedar |
 
 ### Pricing
 

@@ -28,6 +28,7 @@ const SCENTS = [
   { id: 'symphonie-doree', name: 'Symphonie Dorée', inspired: 'Louis Vuitton Symphony', gender: 'unisex', time: 'day', vibes: ['fresh'], notes: 'Grapefruit · Ginger · Bergamot', desc: 'Grapefruit and ginger lifted by bright bergamot. A golden hour that never ends.', best: 'Day · Office · Casual', colors: ['#f8ecc9', '#c99a2e'] },
   { id: 'voile-blanc', name: 'Voile Blanc', inspired: 'Parfums de Marly Valaya', gender: 'female', time: 'day', vibes: ['fresh', 'floral'], notes: 'Bergamot · Orange blossom · Musk', desc: 'Bergamot wakes orange blossom, settling into clean musk. Airy and graceful.', best: 'Day · Office · Date', colors: ['#f4efe9', '#b9a48e'] },
   { id: 'paradosso', name: 'Paradosso', inspired: 'Prada Paradoxe', gender: 'female', time: 'night', vibes: ['sweet', 'floral'], notes: 'Pear · Jasmine · Vanilla bourbon', desc: 'Sweet pear and jasmine dissolving into vanilla bourbon. Soft, yet unshakable.', best: 'Night · Date · Formal', colors: ['#f1e2ea', '#8c4a6e'] },
+  { id: 'bleu-noble', name: 'Bleu Noble', inspired: 'Bleu de Chanel', gender: 'male', time: 'any', vibes: ['fresh', 'bold'], notes: 'Grapefruit · Incense · Cedar', desc: 'Bright grapefruit over smoky incense and smooth cedar. Clean, confident, effortlessly classy.', best: 'Day & Night · Office · Date', colors: ['#dde4f3', '#16326e'] },
 ];
 
 const GENDER_LABEL = { male: 'For him', female: 'For her', unisex: 'Unisex' };
@@ -381,7 +382,7 @@ $('#resultList').addEventListener('click', (e) => {
 $('#quizRestart').addEventListener('click', () => showStep(0));
 
 // ---- Hero stage: tap a perfume, the bottle fills with it ------------
-const TRY = ['sauvage-homme', 'rouge-cristal', 'delina-rose', 'acqua-classica', 'azzurro-mare', 'fiamma', 'noir-intense', 'paradosso', 'lunico'];
+const TRY = ['sauvage-homme', 'bleu-noble', 'rouge-cristal', 'delina-rose', 'acqua-classica', 'azzurro-mare', 'fiamma', 'noir-intense', 'paradosso', 'lunico'];
 const hero = $('#hero');
 const liquid = $('#liquid');
 let stageScent = SCENTS.find((x) => x.id === 'rouge-cristal');

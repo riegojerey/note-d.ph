@@ -26,6 +26,7 @@ PERFUMES = [
     ("Symphonie Dor\u00e9e", "Grapefruit  \u00b7  Ginger  \u00b7  Bergamot", "Inspired by LV Symphony"),
     ("Voile Blanc", "Bergamot  \u00b7  Orange Blossom  \u00b7  Musk", "Inspired by Parfums de Marly Valaya"),
     ("Paradosso", "Pear  \u00b7  Jasmine  \u00b7  Vanilla Bourbon", "Inspired by Prada Paradoxe"),
+    ("Bleu Noble", "Grapefruit  \u00b7  Incense  \u00b7  Cedar", "Inspired by Bleu de Chanel"),
 ]
 
 W, H = 640, 100
