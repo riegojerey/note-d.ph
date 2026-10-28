@@ -1,5 +1,0 @@
-import { json } from '../../_lib.js';
-
-export function onRequestGet({ data }) {
-  return json({ user: { username: data.user.username } });
-}

@@ -52,35 +52,13 @@ smelling unforgettable shouldn't cost a fortune.
 
 ```
 .
-├── index.html, styles.css, script.js   # Shop page
+├── index.html, styles.css, script.js   # Shop page (scents, prices and order list live in script.js)
 ├── brand/                               # Logo files (from updated_logo.jpg)
-├── admin/                               # Admin page at /admin (login required)
-├── functions/                           # Cloudflare Pages Functions: the /api the admin uses
-├── migrations/                          # D1 database tables + starting data
-├── scripts/create-user.mjs              # Create or reset an admin login
 ├── labels/, gen_labels.py               # Printable perfume labels
-└── wrangler.toml, package.json          # Cloudflare tooling
+└── favicon.png
 ```
 
-### Admin (note-d.shop/admin)
-
-Track sales, inventory, expenses and profit, and set the prices the shop shows.
-
-**One-time setup** (needs your Cloudflare login):
-
-1. `npm install`
-2. `npx wrangler login`
-3. `npx wrangler d1 create noted-db` → copy the `database_id` it prints into `wrangler.toml`
-4. `npm run db:migrate:remote` (creates the tables and loads the 21 scents)
-5. Cloudflare dashboard → Workers & Pages → your site → Settings → Bindings → Add → D1 database: variable name `DB`, database `noted-db`. Then redeploy.
-6. `node scripts/create-user.mjs <your-username> --remote` and type a password (10+ characters). Run it again for a partner's account, or to reset a forgotten password.
-
-**Try it locally:** `npm run db:migrate:local`, `node scripts/create-user.mjs test --local`, then `npm run dev` and open http://localhost:8788/admin.
-
-**Notes**
-- Prices set in Admin → Settings show on the shop within about a minute. The prices written in the page are only a fallback.
-- “Show sold out on the shop” starts off. Enter real stock counts in Inventory first.
-- Per-bottle cost covers oil, bottle and packaging. Log only other costs (ads, delivery you pay) as expenses, so nothing is counted twice.
+Sales, inventory and profit tracking live in the separate private **noted-admin** app (Tailscale only).
 
 ### Order
 

@@ -2,9 +2,7 @@
 const FB_PAGE = 'notedph';
 const MESSENGER_URL = `https://m.me/${FB_PAGE}`;
 const FACEBOOK_URL = `https://facebook.com/${FB_PAGE}`;
-const SIZES = { '10mL': 119, '30mL': 275 }; // defaults; live prices come from /api/public/catalog
-let STOCK = null; // { scentId: { '10mL': true/false } } when the shop shows sold-out, else null
-const isInStock = (id, size) => !STOCK || !STOCK[id] || STOCK[id][size] !== false;
+const SIZES = { '10mL': 119, '30mL': 275 };
 
 // gender: male | female | unisex · time: day | night | any
 // vibes: fresh | sweet | floral | bold · colors: card gradient [from, to]
@@ -108,20 +106,12 @@ function cardHTML(s, i) {
       <p class="best">Best for ${listText(s.best).toLowerCase()}</p>
       <div class="card-buy">
         <div class="sizes" role="radiogroup" aria-label="Size">
-          ${(() => {
-            const first = Object.keys(SIZES).find((size) => isInStock(s.id, size));
-            return Object.entries(SIZES).map(([size, price]) => {
-              const out = !isInStock(s.id, size);
-              return `
-            <button class="size${size === first ? ' active' : ''}" role="radio" aria-checked="${size === first}" data-size="${size}"${out ? ' disabled' : ''}>
-              ${size} <strong>${out ? 'Sold out' : peso(price)}</strong>
-            </button>`;
-            }).join('');
-          })()}
+          ${Object.entries(SIZES).map(([size, price], j) => `
+            <button class="size${j === 0 ? ' active' : ''}" role="radio" aria-checked="${j === 0}" data-size="${size}">
+              ${size} <strong>${peso(price)}</strong>
+            </button>`).join('')}
         </div>
-        ${Object.keys(SIZES).some((size) => isInStock(s.id, size))
-          ? '<button class="btn btn-rose add-btn">Add</button>'
-          : '<button class="btn btn-rose add-btn" disabled>Sold out</button>'}
+        <button class="btn btn-rose add-btn">Add</button>
       </div>
     </div>
   </article>`;
@@ -369,7 +359,7 @@ function showResults() {
         <span>Inspired by ${s.inspired}</span>
         <span class="notes">${listText(s.notes)}</span>
       </div>
-      <button class="btn btn-rose btn-sm" data-add="${s.id}"${isInStock(s.id, '10mL') ? '' : ' disabled'}>${isInStock(s.id, '10mL') ? `Add 10mL, ${peso(SIZES['10mL'])}` : '10mL sold out'}</button>
+      <button class="btn btn-rose btn-sm" data-add="${s.id}">Add 10mL, ${peso(SIZES['10mL'])}</button>
     </div>`).join('');
   showStep(steps.length);
 }
@@ -411,11 +401,6 @@ function showOnStage(s) {
   $('#stageInspired').textContent = s.inspired;
   $('#stageNotes').textContent = listText(s.notes);
   document.querySelectorAll('.try-btn').forEach((b) => b.setAttribute('aria-pressed', b.dataset.id === s.id));
-  document.querySelectorAll('[data-stage-add]').forEach((b) => {
-    const size = b.dataset.stageAdd;
-    b.disabled = !isInStock(s.id, size);
-    b.textContent = b.disabled ? `${size} sold out` : `Add ${size}, ${peso(SIZES[size])}`;
-  });
   liquid.classList.remove('slosh');
   void liquid.getBoundingClientRect();
   liquid.classList.add('slosh');
@@ -439,16 +424,3 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 10);
 }, { passive: true });
 
-// ---- Live prices and stock from the admin ----------------------------------
-fetch('/api/public/catalog')
-  .then((r) => (r.ok ? r.json() : Promise.reject()))
-  .then(({ prices, inStock }) => {
-    for (const [size, price] of Object.entries(prices || {})) if (size in SIZES && price > 0) SIZES[size] = price;
-    STOCK = inStock || null;
-    document.querySelectorAll('[data-price]').forEach((el) => { el.textContent = peso(SIZES[el.dataset.price]); });
-    grid.innerHTML = SCENTS.map(cardHTML).join('');
-    applyFilters();
-    renderCart();
-    showOnStage(stageScent);
-  })
-  .catch(() => {}); // offline or no backend: keep the default prices
