@@ -4,7 +4,9 @@ const MESSENGER_URL = `https://m.me/${FB_PAGE}`;
 const FACEBOOK_URL = `https://facebook.com/${FB_PAGE}`;
 const SIZES = { '10mL': 119, '30mL': 275 };
 // Live stock from the admin (see noted-admin/STOCK-SYNC.md). Empty = use the stock flags below.
-const STOCK_URL = '';
+const STOCK_URL = 'https://docker-vm.chronicle-logarithm.ts.net:8443/stock';
+// Scents whose admin ID differs from the site ID (admin builds IDs from the name entered there)
+const ADMIN_ID = { amethyste: 'amethyse', 'bleu-noble': 'de-chanel', vendredi: 'friday', 'ombre-sable': 'ombre-nomade' };
 
 // gender: male | female | unisex · time: day | night | any
 // vibes: fresh | sweet | floral | bold · colors: card gradient [from, to]
@@ -159,7 +161,10 @@ if (STOCK_URL) {
   fetch(STOCK_URL, { signal: AbortSignal.timeout(5000) })
     .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
     .then((live) => {
-      SCENTS.forEach((s) => { if (s.id in live) s.stock = live[s.id]; });
+      SCENTS.forEach((s) => {
+        const id = ADMIN_ID[s.id] || s.id;
+        if (id in live) s.stock = live[id];
+      });
       grid.innerHTML = SCENTS.map(cardHTML).join('');
       applyFilters();
       renderCart();
