@@ -158,7 +158,7 @@ grid.addEventListener('click', (e) => {
 
 // Admin stock wins over the hardcoded flags; if the admin can't be reached, the flags stay.
 if (STOCK_URL) {
-  fetch(STOCK_URL, { signal: AbortSignal.timeout(5000) })
+  fetch(STOCK_URL, AbortSignal.timeout ? { signal: AbortSignal.timeout(5000) } : {})
     .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
     .then((live) => {
       SCENTS.forEach((s) => {
