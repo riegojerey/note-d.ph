@@ -36,6 +36,7 @@ const SCENTS = [
   { id: 'lunico', name: "L'Unico", inspired: 'Dolce & Gabbana The One', gender: 'unisex', time: 'night', vibes: ['sweet'], notes: 'Peach · Vanilla · Amber', desc: 'Juicy peach melting into creamy vanilla and golden amber. Warm and magnetic.', best: 'Night · Date · Intimate', colors: ['#f6e3c8', '#b97a2e'] },
   { id: 'merveille-bleue', name: 'Merveille Ambrée', inspired: 'Hermès Eau des Merveilles', gender: 'female', time: 'any', vibes: ['bold', 'fresh'], notes: 'Orange · Amber · Cedar', desc: 'Sparkling orange over warm amber and dry cedar. Bright, woody and softly glowing, like sunlight on warm skin.', best: 'Day & Night · Casual · Date', colors: ['#f3e1cf', '#a8582e'] },
   { id: 'infuse', name: 'Infusé', inspired: 'Armaf Infusion', gender: 'unisex', time: 'any', vibes: ['fresh'], notes: 'Bergamot · Black tea · Cedar', desc: 'Bright bergamot steeped with black tea and a hint of spice, settling on smooth cedar. Calm, clean and easy all day.', best: 'Day & Night · Office · Casual', colors: ['#ebe6d6', '#7d6b3f'] },
+  { id: 'delina-rose', name: 'Delina Rose', inspired: 'Parfums de Marly Delina', gender: 'female', time: 'any', vibes: ['floral'], notes: 'Lychee · Rhubarb · Turkish rose', desc: 'Juicy lychee and tangy rhubarb around Turkish rose. Feminine and fierce.', best: 'Day & Night · Date · Formal', colors: ['#fbdbe4', '#d0587e'], top: true },
 ];
 
 const GENDER_LABEL = { male: 'For him', female: 'For her', unisex: 'Unisex' };
