@@ -3,6 +3,8 @@ const FB_PAGE = 'notedph';
 const MESSENGER_URL = `https://m.me/${FB_PAGE}`;
 const FACEBOOK_URL = `https://facebook.com/${FB_PAGE}`;
 const SIZES = { '10mL': 119, '30mL': 275 };
+// Live stock from the admin (see noted-admin/STOCK-SYNC.md). Empty = use the stock flags below.
+const STOCK_URL = '';
 
 // gender: male | female | unisex · time: day | night | any
 // vibes: fresh | sweet | floral | bold · colors: card gradient [from, to]
@@ -151,6 +153,19 @@ grid.addEventListener('click', (e) => {
     }, 1200);
   }
 });
+
+// Admin stock wins over the hardcoded flags; if the admin can't be reached, the flags stay.
+if (STOCK_URL) {
+  fetch(STOCK_URL, { signal: AbortSignal.timeout(5000) })
+    .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+    .then((live) => {
+      SCENTS.forEach((s) => { if (s.id in live) s.stock = live[s.id]; });
+      grid.innerHTML = SCENTS.map(cardHTML).join('');
+      applyFilters();
+      renderCart();
+    })
+    .catch(() => {});
+}
 
 // ---- Filter + search ----------------------------------------------------
 let activeFilter = 'all';
