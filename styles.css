@@ -171,6 +171,7 @@ section { padding: 88px 0; }
 .card:hover .mini { transform: rotate(-6deg) translateY(-4px); }
 .card-no { position: absolute; top: 14px; left: 18px; font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--c2); font-variation-settings: 'SOFT' 100; }
 .tag { position: absolute; top: 14px; right: 14px; font-size: 13px; font-weight: 500; background: rgba(255, 255, 255, .85); padding: 3px 11px; border-radius: 999px; }
+.tag.preorder { top: 46px; background: var(--wine); color: #fff; }
 .pick {
   position: absolute; right: 18px; bottom: 26px; width: 64px; height: 64px; border-radius: 50%;
   background: var(--gold); color: var(--wine); display: grid; place-items: center; text-align: center;
@@ -347,6 +348,7 @@ section { padding: 88px 0; }
   .mini { width: 64px; }
   .card-no { font-size: 15px; top: 10px; left: 12px; }
   .tag { top: 8px; right: 8px; font-size: 11px; padding: 2px 8px; }
+  .tag.preorder { top: 32px; }
   .pick { width: 46px; height: 46px; font-size: 11px; right: 8px; bottom: 14px; padding: 4px; }
   .card-body { padding: 12px; }
   .card h3 { font-size: 20px; }

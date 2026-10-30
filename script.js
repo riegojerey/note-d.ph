@@ -7,28 +7,31 @@ const SIZES = { '10mL': 119, '30mL': 275 };
 // gender: male | female | unisex · time: day | night | any
 // vibes: fresh | sweet | floral | bold · colors: card gradient [from, to]
 const SCENTS = [
-  { id: 'acqua-profonda', name: 'Acqua Profonda', inspired: 'Acqua di Gio Profondo', gender: 'male', time: 'day', vibes: ['fresh'], notes: 'Marine · Bergamot · Cypress', desc: 'Crisp sea air and sharp bergamot over grounded cypress. Bottled confidence.', best: 'Day · Beach · Office', colors: ['#cfe6f2', '#5b93b5'] },
-  { id: 'fiamma', name: 'Fiamma', inspired: 'Versace Eros Flame', gender: 'male', time: 'night', vibes: ['sweet', 'bold'], notes: 'Red apple · Tonka · Sage', desc: 'Red apple and tonka wrapped in aromatic sage. Starts bold, ends unforgettable.', best: 'Night · Date · Party', colors: ['#f6d2c4', '#c2452d'] },
+  { id: 'acqua-profonda', name: 'Acqua Profonda', inspired: 'Acqua di Gio Profondo', gender: 'male', time: 'day', vibes: ['fresh'], notes: 'Marine · Bergamot · Cypress', desc: 'Crisp sea air and sharp bergamot over grounded cypress. Bottled confidence.', best: 'Day · Beach · Office', colors: ['#cfe6f2', '#5b93b5'], stock: true },
+  { id: 'fiamma', name: 'Fiamma', inspired: 'Versace Eros Flame', gender: 'male', time: 'night', vibes: ['sweet', 'bold'], notes: 'Red apple · Tonka · Sage', desc: 'Red apple and tonka wrapped in aromatic sage. Starts bold, ends unforgettable.', best: 'Night · Date · Party', colors: ['#f6d2c4', '#c2452d'], stock: true },
   { id: 'fluidite-douce', name: 'Fluidité Douce', inspired: 'Gentle Fluidity', gender: 'unisex', time: 'any', vibes: ['sweet', 'fresh'], notes: 'Juniper · Musk · Vanilla', desc: 'Fresh juniper glides into soft musk and warm vanilla. Subtle, but noticed.', best: 'Day & Night · Office · Casual', colors: ['#ece6dc', '#a69580'] },
-  { id: 'rouge-cristal', name: 'Rouge Cristal', inspired: 'Baccarat Rouge 540', gender: 'unisex', time: 'night', vibes: ['sweet', 'bold'], notes: 'Saffron · Cedar · Ambergris', desc: 'Saffron, smoked cedar and ambergris. Lingers in the room long after you leave.', best: 'Night · Formal · Evening', colors: ['#f4d6d0', '#a3263a'], top: true },
+  { id: 'rouge-cristal', name: 'Rouge Cristal', inspired: 'Baccarat Rouge 540', gender: 'unisex', time: 'night', vibes: ['sweet', 'bold'], notes: 'Saffron · Cedar · Ambergris', desc: 'Saffron, smoked cedar and ambergris. Lingers in the room long after you leave.', best: 'Night · Formal · Evening', colors: ['#f4d6d0', '#a3263a'], stock: true, top: true },
   { id: '212', name: '212°', inspired: 'Carolina Herrera 212', gender: 'unisex', time: 'day', vibes: ['fresh'], notes: 'Citrus · Florals · Sandalwood', desc: 'Zesty citrus over soft sandalwood. For the one who never stops moving.', best: 'Day · City · Everyday', colors: ['#e3e7ee', '#6b7a90'] },
   { id: 'corail-solaire', name: 'Corail Solaire', inspired: 'Bvlgari Omnia Coral', gender: 'female', time: 'day', vibes: ['floral'], notes: 'Hibiscus · Pomegranate · Cedar', desc: 'Hibiscus and pomegranate burst against creamy cedar. Summer, bottled.', best: 'Day · Beach · Summer', colors: ['#fbd9cc', '#e2694f'] },
-  { id: 'cristalline', name: 'Cristalline', inspired: 'Bvlgari Omnia Crystalline', gender: 'female', time: 'day', vibes: ['fresh', 'floral'], notes: 'Lotus · Bamboo · White tea', desc: 'Lotus floating above bamboo and white tea. Pure, luminous, serene.', best: 'Day · Office · Brunch', colors: ['#e6f2ef', '#8bbcb1'] },
-  { id: 'sauvage-homme', name: 'Sauvage Homme', inspired: 'Dior Sauvage', gender: 'male', time: 'any', vibes: ['fresh', 'bold'], notes: 'Bergamot · Pepper · Ambroxan', desc: 'Peppery bergamot crashing into deep ambroxan. Untamed and unmistakable.', best: 'Day & Night · All occasions', colors: ['#d9dfe8', '#2f4a6b'], top: true },
+  { id: 'cristalline', name: 'Cristalline', inspired: 'Bvlgari Omnia Crystalline', gender: 'female', time: 'day', vibes: ['fresh', 'floral'], notes: 'Lotus · Bamboo · White tea', desc: 'Lotus floating above bamboo and white tea. Pure, luminous, serene.', best: 'Day · Office · Brunch', colors: ['#e6f2ef', '#8bbcb1'], stock: true },
+  { id: 'sauvage-homme', name: 'Sauvage Homme', inspired: 'Dior Sauvage', gender: 'male', time: 'any', vibes: ['fresh', 'bold'], notes: 'Bergamot · Pepper · Ambroxan', desc: 'Peppery bergamot crashing into deep ambroxan. Untamed and unmistakable.', best: 'Day & Night · All occasions', colors: ['#d9dfe8', '#2f4a6b'], stock: true, top: true },
   { id: 'azzurro-mare', name: 'Azzurro Mare', inspired: 'Dolce & Gabbana Light Blue', gender: 'unisex', time: 'day', vibes: ['fresh'], notes: 'Lemon · Cedar · Musk', desc: 'Sicilian lemon, sea breeze, crisp cedar and clean musk. Freedom in a bottle.', best: 'Day · Beach · Casual', colors: ['#d6ebf7', '#3f8fc4'] },
-  { id: 'eclat-florale', name: 'Éclat Florale', inspired: "Lanvin Éclat d'Arpège", gender: 'female', time: 'day', vibes: ['floral'], notes: 'Lilac · Peach · White musk', desc: 'Lilac and peach kissed by white musk. Delicate, romantic, timeless.', best: 'Day · Garden party · Date', colors: ['#ebe0f3', '#9a7cc0'] },
+  { id: 'eclat-florale', name: 'Éclat Florale', inspired: "Lanvin Éclat d'Arpège", gender: 'female', time: 'day', vibes: ['floral'], notes: 'Lilac · Peach · White musk', desc: 'Lilac and peach kissed by white musk. Delicate, romantic, timeless.', best: 'Day · Garden party · Date', colors: ['#ebe0f3', '#9a7cc0'], stock: true },
   { id: 'merveille-bleue', name: 'Merveille Bleue', inspired: 'Hermès Eau des Merveilles Bleue', gender: 'female', time: 'day', vibes: ['fresh'], notes: 'Salt · Minerals · Driftwood', desc: 'Salted minerals and weathered driftwood. The ocean at twilight.', best: 'Day · Beach · Coastal walks', colors: ['#d5e4ec', '#4c7590'] },
   { id: 'lunico', name: "L'Unico", inspired: 'Dolce & Gabbana The One', gender: 'unisex', time: 'night', vibes: ['sweet'], notes: 'Peach · Vanilla · Amber', desc: 'Juicy peach melting into creamy vanilla and golden amber. Warm and magnetic.', best: 'Night · Date · Intimate', colors: ['#f6e3c8', '#b97a2e'] },
   { id: 'acqua-classica', name: 'Acqua Classica', inspired: 'Acqua di Gio', gender: 'male', time: 'day', vibes: ['fresh'], notes: 'Seawater · Jasmine · Rosemary', desc: 'Cool seawater, jasmine and fresh rosemary. The timeless icon.', best: 'Day · Beach · Office', colors: ['#d4ecf0', '#3a8a9e'], top: true },
   { id: 'blanc-frais', name: 'Blanc Frais', inspired: 'Lacoste L.12.12 White', gender: 'male', time: 'day', vibes: ['fresh'], notes: 'Grapefruit · Cardamom · Cedar', desc: 'Fresh grapefruit and cardamom on smooth cedar. Crisp, sporty, clean.', best: 'Day · Sport · Office', colors: ['#eef1ea', '#7f9a72'] },
-  { id: 'nectarine-bloom', name: 'Nectarine Bloom', inspired: 'Jo Malone Nectarine Blossom & Honey', gender: 'female', time: 'day', vibes: ['floral', 'sweet'], notes: 'Nectarine · Peony · Honey', desc: 'Ripe nectarine, peony petals and a drizzle of honey. Bright and joyful.', best: 'Day · Garden · Brunch', colors: ['#fde2cc', '#e88a4f'] },
+  { id: 'nectarine-bloom', name: 'Nectarine Bloom', inspired: 'Jo Malone Nectarine Blossom & Honey', gender: 'female', time: 'day', vibes: ['floral', 'sweet'], notes: 'Nectarine · Peony · Honey', desc: 'Ripe nectarine, peony petals and a drizzle of honey. Bright and joyful.', best: 'Day · Garden · Brunch', colors: ['#fde2cc', '#e88a4f'], stock: true },
   { id: 'delina-rose', name: 'Delina Rose', inspired: 'Parfums de Marly Delina', gender: 'female', time: 'any', vibes: ['floral'], notes: 'Lychee · Rhubarb · Turkish rose', desc: 'Juicy lychee and tangy rhubarb around Turkish rose. Feminine and fierce.', best: 'Day & Night · Date · Formal', colors: ['#fbdbe4', '#d0587e'], top: true },
-  { id: 'reverie', name: 'Rêverie', inspired: 'Louis Vuitton Imagination', gender: 'unisex', time: 'any', vibes: ['bold', 'sweet'], notes: 'Black tea · Ginger · Cinnamon', desc: 'Black tea steeped with ginger and cinnamon. Quiet luxury, cozy warmth.', best: 'Cold days · Café · Evenings', colors: ['#ece3d7', '#8a6a4a'] },
-  { id: 'noir-intense', name: 'Noir Intense', inspired: 'YSL Y Intense', gender: 'male', time: 'night', vibes: ['bold'], notes: 'Ginger · Lavender · Vetiver', desc: 'Sharp ginger through lavender, grounded by dark vetiver. Bold and electric.', best: 'Night · Party · Date', colors: ['#d9d9e3', '#2b2b3d'] },
-  { id: 'symphonie-doree', name: 'Symphonie Dorée', inspired: 'Louis Vuitton Symphony', gender: 'unisex', time: 'day', vibes: ['fresh'], notes: 'Grapefruit · Ginger · Bergamot', desc: 'Grapefruit and ginger lifted by bright bergamot. A golden hour that never ends.', best: 'Day · Office · Casual', colors: ['#f8ecc9', '#c99a2e'] },
-  { id: 'voile-blanc', name: 'Voile Blanc', inspired: 'Parfums de Marly Valaya', gender: 'female', time: 'day', vibes: ['fresh', 'floral'], notes: 'Bergamot · Orange blossom · Musk', desc: 'Bergamot wakes orange blossom, settling into clean musk. Airy and graceful.', best: 'Day · Office · Date', colors: ['#f4efe9', '#b9a48e'] },
+  { id: 'reverie', name: 'Rêverie', inspired: 'Louis Vuitton Imagination', gender: 'unisex', time: 'any', vibes: ['bold', 'sweet'], notes: 'Black tea · Ginger · Cinnamon', desc: 'Black tea steeped with ginger and cinnamon. Quiet luxury, cozy warmth.', best: 'Cold days · Café · Evenings', colors: ['#ece3d7', '#8a6a4a'], stock: true },
+  { id: 'noir-intense', name: 'Noir Intense', inspired: 'YSL Y Intense', gender: 'male', time: 'night', vibes: ['bold'], notes: 'Ginger · Lavender · Vetiver', desc: 'Sharp ginger through lavender, grounded by dark vetiver. Bold and electric.', best: 'Night · Party · Date', colors: ['#d9d9e3', '#2b2b3d'], stock: true },
+  { id: 'symphonie-doree', name: 'Symphonie Dorée', inspired: 'Louis Vuitton Symphony', gender: 'unisex', time: 'day', vibes: ['fresh'], notes: 'Grapefruit · Ginger · Bergamot', desc: 'Grapefruit and ginger lifted by bright bergamot. A golden hour that never ends.', best: 'Day · Office · Casual', colors: ['#f8ecc9', '#c99a2e'], stock: true },
+  { id: 'voile-blanc', name: 'Voile Blanc', inspired: 'Parfums de Marly Valaya', gender: 'female', time: 'day', vibes: ['fresh', 'floral'], notes: 'Bergamot · Orange blossom · Musk', desc: 'Bergamot wakes orange blossom, settling into clean musk. Airy and graceful.', best: 'Day · Office · Date', colors: ['#f4efe9', '#b9a48e'], stock: true },
   { id: 'paradosso', name: 'Paradosso', inspired: 'Prada Paradoxe', gender: 'female', time: 'night', vibes: ['sweet', 'floral'], notes: 'Pear · Jasmine · Vanilla bourbon', desc: 'Sweet pear and jasmine dissolving into vanilla bourbon. Soft, yet unshakable.', best: 'Night · Date · Formal', colors: ['#f1e2ea', '#8c4a6e'] },
-  { id: 'bleu-noble', name: 'Bleu Noble', inspired: 'Bleu de Chanel', gender: 'male', time: 'any', vibes: ['fresh', 'bold'], notes: 'Grapefruit · Incense · Cedar', desc: 'Bright grapefruit over smoky incense and smooth cedar. Clean, confident, effortlessly classy.', best: 'Day & Night · Office · Date', colors: ['#dde4f3', '#16326e'] },
+  { id: 'bleu-noble', name: 'Bleu Noble', inspired: 'Bleu de Chanel', gender: 'male', time: 'any', vibes: ['fresh', 'bold'], notes: 'Grapefruit · Incense · Cedar', desc: 'Bright grapefruit over smoky incense and smooth cedar. Clean, confident, effortlessly classy.', best: 'Day & Night · Office · Date', colors: ['#dde4f3', '#16326e'], stock: true },
+  { id: 'ombre-sable', name: 'Ombre Sable', inspired: 'Louis Vuitton Ombre Nomade', gender: 'unisex', time: 'night', vibes: ['bold', 'sweet'], notes: 'Oud · Raspberry · Incense', desc: 'Smoky oud and incense softened by dark raspberry. Rich, mysterious, unforgettable.', best: 'Night · Formal · Cold evenings', colors: ['#ead9cf', '#5a2e24'], stock: true },
+  { id: 'vendredi', name: 'Vendredi', inspired: 'Zara Friday', gender: 'female', time: 'any', vibes: ['sweet', 'floral'], notes: 'Pear · Florals · Vanilla', desc: 'Juicy pear and soft florals on a cozy vanilla base. The weekend starts now.', best: 'Day & Night · Casual · Night out', colors: ['#f7e1d9', '#c76b5a'], stock: true },
+  { id: 'amethyste', name: 'Améthyste', inspired: 'Bvlgari Omnia Amethyste', gender: 'female', time: 'day', vibes: ['floral', 'fresh'], notes: 'Iris · Rose · Pink grapefruit', desc: 'Powdery iris and dewy rose lifted by pink grapefruit. Soft, polished, quietly radiant.', best: 'Day · Office · Brunch', colors: ['#ece2f2', '#8a5aa8'], stock: true },
 ];
 
 const GENDER_LABEL = { male: 'For him', female: 'For her', unisex: 'Unisex' };
@@ -96,6 +99,7 @@ function cardHTML(s, i) {
     <div class="card-label">
       <span class="card-no">Nº ${num(i)}</span>
       <span class="tag">${GENDER_LABEL[s.gender]}</span>
+      ${s.stock ? '' : '<span class="tag preorder">Pre-order</span>'}
       ${s.top ? '<span class="pick">Our pick</span>' : ''}
       ${miniBottle(s)}
     </div>
@@ -112,7 +116,7 @@ function cardHTML(s, i) {
               ${size} <strong>${peso(price)}</strong>
             </button>`).join('')}
         </div>
-        <button class="btn btn-rose add-btn">Add</button>
+        <button class="btn btn-rose add-btn">${s.stock ? 'Add' : 'Pre-order'}</button>
       </div>
     </div>
   </article>`;
@@ -138,10 +142,11 @@ grid.addEventListener('click', (e) => {
   if (addBtn) {
     const size = card.querySelector('.size.active').dataset.size;
     addToCart(card.dataset.id, size);
+    const label = addBtn.textContent;
     addBtn.textContent = 'Added';
     addBtn.classList.add('added');
     setTimeout(() => {
-      addBtn.textContent = 'Add';
+      addBtn.textContent = label;
       addBtn.classList.remove('added');
     }, 1200);
   }
@@ -252,7 +257,7 @@ function renderCart() {
       ${swatch(s)}
       <div class="line-info">
         <strong>${s.name}</strong>
-        <span>${l.size}, inspired by ${s.inspired}</span>
+        <span>${l.size}, inspired by ${s.inspired}${s.stock ? '' : ' · Pre-order'}</span>
         <div class="qty">
           <button data-i="${i}" data-d="-1" aria-label="Decrease">−</button>
           <span>${l.qty}</span>
@@ -298,7 +303,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCart(
 function orderMessage() {
   const lines = cart.map((l) => {
     const s = SCENTS.find((x) => x.id === l.id);
-    return `• ${l.qty} × ${s.name} (${l.size}) — ${peso(SIZES[l.size] * l.qty)}`;
+    return `• ${l.qty} × ${s.name} (${l.size})${s.stock ? '' : ' [pre-order]'} — ${peso(SIZES[l.size] * l.qty)}`;
   });
   return [
     "Hi Note.d! I'd like to order:",
