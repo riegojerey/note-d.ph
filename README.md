@@ -53,7 +53,8 @@ smelling unforgettable shouldn't cost a fortune.
 
 ```
 .
-├── index.html, styles.css, script.js   # Shop page (scents, prices and order list live in script.js)
+├── index.html, styles.css, script.js   # Shop page (prices and order list live in script.js)
+├── scents.js                            # The scent list (names, notes, descriptions)
 ├── brand/                               # Logo files (from updated_logo.jpg)
 ├── labels/, gen_labels.py               # Printable perfume labels
 └── favicon.png
@@ -63,7 +64,7 @@ Sales, inventory and profit tracking live in the separate private **noted-admin*
 
 ### Order
 
-Message us on Facebook: **[fb.com/notedph](https://fb.com/notedph)**
+Message us on Facebook: **[Note-d Perfumes](https://www.facebook.com/notedperfumes)**
 
 ---
 

@@ -135,7 +135,7 @@ svg_head_raw = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" 
   <text x="{R}" y="54" font-family="Georgia,serif" font-size="6" fill="#a09078" font-style="italic">$$inspired$$</text>
 
   <!-- website + volume -->
-  <text x="{R}" y="72" font-family="Georgia,serif" font-size="5" fill="#a09078">fb.com/notedph</text>
+  <text x="{R}" y="72" font-family="Georgia,serif" font-size="5" fill="#a09078">fb.com/notedperfumes</text>
   <text x="{R}" y="83" font-family="Georgia,serif" font-size="5" fill="#a09078">10mL \u00b7 30mL</text>
 
   <!-- small ornament -->
@@ -154,7 +154,7 @@ SVG_HEAD = svg_head_raw.format(
     R=R, RBX=RBX, RBW=RBW,
 )
 
-OUT_DIR = "/home/riegojere/Projects/aura-ghibli/labels"
+OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "labels")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 for name, notes, inspired in PERFUMES:
