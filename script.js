@@ -1,6 +1,9 @@
 // ---- Config -------------------------------------------------------------
 const FB_PAGE = 'notedperfumes';
-const MESSENGER_URL = `https://m.me/${FB_PAGE}`;
+const FB_PAGE_ID = '1405656955967205';
+// Phones: m.me opens the Messenger app. Desktops: Facebook chat, since messenger.com closed (Apr 2026) and asks for its own login.
+const IS_PHONE = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const MESSENGER_URL = IS_PHONE ? `https://m.me/${FB_PAGE}` : `https://www.facebook.com/messages/t/${FB_PAGE_ID}`;
 const FACEBOOK_URL = `https://facebook.com/${FB_PAGE}`;
 const SIZES = { '10mL': 119, '30mL': 275 };
 // Live stock from the admin (see noted-admin/STOCK-SYNC.md). Empty = use the stock flags below.
